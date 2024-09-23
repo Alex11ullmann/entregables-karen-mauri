@@ -1,0 +1,4 @@
+validar si el dominio ingresado ya existe, si existe devolver un console que no se puede volver a ingresar y pida de nuevo los datos.
+para eliminar validad si el nombre ingresado no existe
+modificar para que cuando elimino a un vehiculo, tambien me elimine a la persona y
+modificar para que cuando pushee me arme un array de persona y el vehiculo que tiene
