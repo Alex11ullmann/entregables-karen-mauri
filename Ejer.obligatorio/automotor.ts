@@ -1,3 +1,7 @@
+import { Auto } from "./auto";
+import { Moto } from "./moto";
+import { Camion } from "./camion";
+import { Persona } from "./persona";
 import { Transferencia } from "./transferencia";
 
 export class RegistroAutomotor {
@@ -27,18 +31,21 @@ export class RegistroAutomotor {
         this.listaTransferidos = listaTransferidos;
     }
     //metodos
-    aniadirTransferencia (marca :string, modelo :number, color :string, dominio :string|number, titular : string, dni : number) : void {
-        let transferenciaNueva : Transferencia = new Transferencia (marca, modelo, color, dominio, titular, dni);
-        if (!this.listaTransferidos.some(transf=>
-            transf.getMarca() == marca &&
-            transf.getModelo() == modelo &&
-            transf.getColor() == color &&
-            transf.getDominio() == dominio &&
-            transf.getTitular() == titular &&
-            transf.getDni() == dni)
-            ){
-                this.listaTransferidos.push (transferenciaNueva);
-            }
+    aniadirTransferencia (transferencia : Transferencia[]) : void {
+        let personaNueva1 : Persona = new Persona ("Jose", 42546554);
+        let vehiculoNuevo1 : Moto = new Moto ("yamaha", 2220, "Roja", "CS 106 AB");
+        
+        let transferenciaNueva : Transferencia = new Transferencia ([personaNueva1], [vehiculoNuevo1]);
+        // if (!this.listaTransferidos.some(transf=>
+        //     transf.getMarca() == marca &&
+        //     transf.getModelo() == modelo &&
+        //     transf.getColor() == color &&
+        //     transf.getDominio() == dominio &&
+        //     transf.getTitular() == titular &&
+        //     transf.getDni() == dni)
+        //     ){
+        //         this.listaTransferidos.push (transferenciaNueva);
+        //     }
     }
     darDeBajaTrasferido (trasferenciaADarBaja :Transferencia) :void{
         if (trasferenciaADarBaja != undefined && this.listaTransferidos.includes(trasferenciaADarBaja)) {
