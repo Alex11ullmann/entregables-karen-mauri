@@ -15,10 +15,10 @@ export class Persona {
         return this.dni;
     }
     //setters
-    setTitular (titular:string) : void {
+    public setTitular (titular:string) : void {
         this.titular = titular;
     }
-    setDni (dni:number) : void {
+    public setDni (dni:number) : void {
         this.dni = dni;
     }
 }

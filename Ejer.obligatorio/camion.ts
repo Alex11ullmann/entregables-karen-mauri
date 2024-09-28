@@ -24,10 +24,10 @@ export class Camion {
     public getDominio () : string | number {
         return this.dominio;
     }
+    //setters
     public setDominio (dominio: string | number) : void {
         this.dominio = dominio;
     }
-    //setters
     public setMarca (marca: string) : void {
         this.marca = marca;
     }

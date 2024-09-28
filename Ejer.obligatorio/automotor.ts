@@ -5,10 +5,10 @@ import { Persona } from "./persona";
 import { Transferencia } from "./transferencia";
 
 export class RegistroAutomotor {
-    private listaTransferidos : Transferencia[];
     private sucursal : string;
+    private listaTransferidos : Transferencia[];
 
-    constructor (sucursal : string, listaTransferidos?:Transferencia[]) {
+    constructor (sucursal : string, listaTransferidos:Transferencia[]) {
         this.sucursal = sucursal;
         if (listaTransferidos != undefined) {
             this.listaTransferidos = listaTransferidos;
@@ -30,26 +30,18 @@ export class RegistroAutomotor {
     setListaTransferidos (listaTransferidos :Transferencia []) :void{
         this.listaTransferidos = listaTransferidos;
     }
-    //metodos
-    aniadirTransferencia (transferencia : Transferencia[]) : void {
-        let personaNueva1 : Persona = new Persona ("Jose", 42546554);
-        let vehiculoNuevo1 : Moto = new Moto ("yamaha", 2220, "Roja", "CS 106 AB");
-        
-        let transferenciaNueva : Transferencia = new Transferencia ([personaNueva1], [vehiculoNuevo1]);
-        // if (!this.listaTransferidos.some(transf=>
-        //     transf.getMarca() == marca &&
-        //     transf.getModelo() == modelo &&
-        //     transf.getColor() == color &&
-        //     transf.getDominio() == dominio &&
-        //     transf.getTitular() == titular &&
-        //     transf.getDni() == dni)
-        //     ){
-        //         this.listaTransferidos.push (transferenciaNueva);
-        //     }
-    }
-    darDeBajaTrasferido (trasferenciaADarBaja :Transferencia) :void{
-        if (trasferenciaADarBaja != undefined && this.listaTransferidos.includes(trasferenciaADarBaja)) {
-            this.listaTransferidos = this.listaTransferidos.filter (trasferenciaADarBaja => trasferenciaADarBaja !== trasferenciaADarBaja);
-        }
-    }
 }
+
+let personaNueva1 : Persona = new Persona ("German", 18321975);
+let vehiculoNuevo1 : Moto = new Moto ("yamaha", 2220, "Roja", "CS 106 AB");
+let transferencia1 :Transferencia = new Transferencia ([personaNueva1], [vehiculoNuevo1]);
+
+let personaNueva2 : Persona = new Persona ("Pepe", 18321975);
+let vehiculoNuevo2 : Moto = new Moto ("Honda", 2220, "Roja", "CS 106 AB");
+let transferencia2 :Transferencia = new Transferencia ([personaNueva2], [vehiculoNuevo2]);
+
+console.log (transferencia1, transferencia2);
+
+let registro1 : RegistroAutomotor = new RegistroAutomotor ("B", [transferencia1, transferencia2]);
+
+console.log (registro1);

@@ -24,10 +24,10 @@ export class Auto {
     public getDominio () : string | number {
         return this.dominio;
     }
+    //setters
     public setDominio (dominio: string | number) : void {
         this.dominio = dominio;
     }
-    //setters
     public setMarca (marca: string) : void {
         this.marca = marca;
     }
@@ -37,4 +37,5 @@ export class Auto {
     public setColor (color: string) : void {
         this.color = color;
     }
+    
 }
